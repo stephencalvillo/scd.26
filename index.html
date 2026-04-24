@@ -6,42 +6,59 @@
     <title>Stephen Calvillo - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body data-theme="night">
     <div class="app-layout">
       <aside class="left-panel">
+        <section class="intro-panel">
+          <div class="identity-row">
+            <div class="identity-mark">SC</div>
+            <div class="identity-meta">
+              <p class="name">Stephen Calvillo</p>
+              <div class="subline">
+                <span>Designer</span>
+                <span>Forever</span>
+              </div>
+            </div>
+          </div>
+          <p class="intro-copy">
+            Based in Long Beach, California. Husband, dad, and occasional cyclist. I spend most of my free time with family and friends.
+            <br /><br />
+            I am a Product Designer at Stripe, focused on our core Dashboard product and helping empower business owners.
+            <br /><br />
+            Navigate below to view selected work and experiences.
+          </p>
+          <p class="intro-nav">Navigate below to view selected work from places I have been and things I have experienced.</p>
+          <div class="arrow-down" aria-hidden="true">↓</div>
+        </section>
+
         <section class="left-top">
           <div class="panel-switcher" role="tablist" aria-label="Portfolio section">
-            <button class="tab-button is-active" data-tab="work" role="tab" aria-selected="true">
-              Work
-            </button>
-            <button class="tab-button" data-tab="career" role="tab" aria-selected="false">
-              Career
-            </button>
+            <button class="tab-button is-active" data-tab="work" role="tab" aria-selected="true">Work</button>
+            <button class="tab-button" data-tab="career" role="tab" aria-selected="false">Career</button>
           </div>
-
           <div id="experience-list" class="experience-list" aria-live="polite"></div>
         </section>
 
         <section class="left-bottom">
-          <h2 class="section-label">Playlist</h2>
-          <div class="spotify-shell">
-            <p class="spotify-note">
-              Spotify playlist module ready. Share your playlist URL/ID and this will connect live.
-            </p>
-            <iframe
-              title="Spotify playlist placeholder"
-              class="spotify-embed"
-              src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6?utm_source=generator"
-              loading="lazy"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            ></iframe>
+          <div class="audio-header">
+            <h2 class="section-label">In my ears</h2>
+            <span class="audio-meta">i</span>
           </div>
+          <div class="audio-hero"></div>
+          <div class="track-copy">
+            <p class="track-title">Song name</p>
+            <p class="track-artist">Artist</p>
+          </div>
+          <iframe
+            title="Spotify playlist placeholder"
+            class="spotify-embed"
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6?utm_source=generator"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          ></iframe>
         </section>
       </aside>
 
@@ -52,15 +69,16 @@
             <h1 id="experience-title">Design Portfolio Direction</h1>
           </div>
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle day and night mode">
-            <span class="theme-text">Day mode</span>
+            <span class="sun">☼</span>
+            <span class="switch"><span class="knob"></span></span>
+            <span class="moon">◐</span>
           </button>
         </header>
 
         <section class="case-study-area">
           <h2 class="section-label">Case Studies</h2>
           <p id="case-study-description" class="case-copy">
-            Main content swaps based on selected experience. Add your images into folders under
-            <code>assets/</code> and this area will surface them.
+            Main content swaps based on selected experience. Add your images into folders under <code>assets/</code> and this area will surface them.
           </p>
           <div id="case-grid" class="case-grid"></div>
         </section>
@@ -69,7 +87,6 @@
           <h2 class="section-label">Ask Me Anything</h2>
           <p>
             Planned space for an LLM assistant trained on your perspective docs and role context.
-            This is intentionally scaffolded for your later interface design.
           </p>
           <div class="ask-placeholder">
             <p>Future input UI + answer cards + optional contextual images</p>

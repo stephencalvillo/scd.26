@@ -1,25 +1,28 @@
 const data = {
   work: [
     {
-      id: "scd",
-      title: "SCD.26 - Founder",
-      period: "Current",
+      id: "stripe",
+      title: "Stripe",
+      role: "Staff Designer",
+      period: "2024-Present",
       detail:
-        "Building independent product and design systems experiments focused on clear user outcomes.",
-      cases: ["assets/01_scd", "assets/03_heirloom", "assets/08_photography"],
+        "Focused on core Dashboard experiences that help business owners run and grow their companies.",
+      cases: ["assets/01_scd", "assets/02_stripe"],
     },
     {
-      id: "stripe",
-      title: "Stripe - Product Design",
-      period: "Previous",
+      id: "heirloom",
+      title: "Heirloom",
+      role: "Head of Design",
+      period: "2022-24",
       detail:
-        "Designed and shipped platform workflows with a focus on trust, clarity, and operational scale.",
-      cases: ["assets/02_stripe"],
+        "Built the product design function and set early product direction, UX principles, and quality bar.",
+      cases: ["assets/03_heirloom"],
     },
     {
       id: "lyft",
-      title: "Lyft - Product Design",
-      period: "Previous",
+      title: "Lyft",
+      role: "Staff Designer",
+      period: "2019-22",
       detail:
         "Worked on rider and driver lifecycle flows, improving reliability and conversion at key journeys.",
       cases: ["assets/04_lyft"],
@@ -28,16 +31,18 @@ const data = {
   career: [
     {
       id: "linkedin",
-      title: "LinkedIn - Product Design",
-      period: "Career Milestone",
+      title: "LinkedIn",
+      role: "Senior Designer",
+      period: "2015-18",
       detail:
         "Created marketplace and profile experiences with measurable impact on discovery and engagement.",
       cases: ["assets/05_linkedin"],
     },
     {
       id: "fullscreen",
-      title: "Fullscreen - Product Design",
-      period: "Early Career",
+      title: "Fullscreen",
+      role: "Designer",
+      period: "2012-15",
       detail:
         "Defined creator-focused product UX patterns and established reusable component foundations.",
       cases: ["assets/06_fullscreen"],
@@ -50,6 +55,7 @@ const titleEl = document.getElementById("experience-title");
 const caseDescEl = document.getElementById("case-study-description");
 const caseGridEl = document.getElementById("case-grid");
 const themeToggle = document.getElementById("theme-toggle");
+const themeKnob = document.querySelector(".knob");
 
 let activeTab = "work";
 let activeRowId = data.work[0].id;
@@ -76,9 +82,9 @@ function renderRows() {
         <button class="experience-summary" type="button" aria-expanded="${isOpen}">
           <span class="experience-meta">
             <h3>${entry.title}</h3>
-            <p>${entry.period}</p>
+            <p>${entry.role}</p>
           </span>
-          <span>${isOpen ? "−" : "+"}</span>
+          <span class="period">${entry.period}</span>
         </button>
         <div class="experience-detail">${entry.detail}</div>
       </article>
@@ -118,8 +124,7 @@ document.addEventListener("click", (event) => {
     const body = document.body;
     const nextTheme = body.dataset.theme === "day" ? "night" : "day";
     body.dataset.theme = nextTheme;
-    themeToggle.querySelector(".theme-text").textContent =
-      nextTheme === "day" ? "Night mode" : "Day mode";
+    themeKnob.style.transform = nextTheme === "day" ? "translateX(15px)" : "translateX(0)";
   }
 });
 
