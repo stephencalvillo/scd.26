@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stephen Calvillo - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-theme="night">
+    <div class="app-layout">
+      <aside class="left-panel">
+        <section class="left-top">
+          <div class="panel-switcher" role="tablist" aria-label="Portfolio section">
+            <button class="tab-button is-active" data-tab="work" role="tab" aria-selected="true">
+              Work
+            </button>
+            <button class="tab-button" data-tab="career" role="tab" aria-selected="false">
+              Career
+            </button>
+          </div>
+
+          <div id="experience-list" class="experience-list" aria-live="polite"></div>
+        </section>
+
+        <section class="left-bottom">
+          <h2 class="section-label">Playlist</h2>
+          <div class="spotify-shell">
+            <p class="spotify-note">
+              Spotify playlist module ready. Share your playlist URL/ID and this will connect live.
+            </p>
+            <iframe
+              title="Spotify playlist placeholder"
+              class="spotify-embed"
+              src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6?utm_source=generator"
+              loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+          </div>
+        </section>
+      </aside>
+
+      <main class="main-content">
+        <header class="main-header">
+          <div>
+            <p class="eyebrow">Selected Experience</p>
+            <h1 id="experience-title">Design Portfolio Direction</h1>
+          </div>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle day and night mode">
+            <span class="theme-text">Day mode</span>
+          </button>
+        </header>
+
+        <section class="case-study-area">
+          <h2 class="section-label">Case Studies</h2>
+          <p id="case-study-description" class="case-copy">
+            Main content swaps based on selected experience. Add your images into folders under
+            <code>assets/</code> and this area will surface them.
+          </p>
+          <div id="case-grid" class="case-grid"></div>
+        </section>
+
+        <section class="ask-area">
+          <h2 class="section-label">Ask Me Anything</h2>
+          <p>
+            Planned space for an LLM assistant trained on your perspective docs and role context.
+            This is intentionally scaffolded for your later interface design.
+          </p>
+          <div class="ask-placeholder">
+            <p>Future input UI + answer cards + optional contextual images</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
